@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public Vector3 Velocity { get; private set; } = Vector3.zero;
+    public bool HasControl { get; private set; } = true;
+    public float XIAInput { get; set; } = 0.0f;
 
     public PlayerControllerData controllerData = null;
 
@@ -48,6 +50,17 @@ public class PlayerController : MonoBehaviour
 
     private bool CanUseCoyote => coyoteUsable && !downCol.isColliding && timeLeftGrounded + controllerData.coyoteTime > Time.time;
     private bool HasBufferedJump => downCol.isColliding && InputManager.Instance.LastJumpTime + controllerData.jumpBufferTime > Time.time;
+
+    public void SetHasControl(bool hasControl)
+    {
+        HasControl = hasControl;
+        horizontalSpeed = 0.0f;
+    }
+
+    public bool IsCollidingDown()
+    {
+        return downCol.isColliding;
+    }
 
     public void Awake()
     {
@@ -127,10 +140,11 @@ public class PlayerController : MonoBehaviour
 
     private void HandleHorizontalMovement()
     {
-        if(InputManager.Instance.XInput != 0)
+        float horizontalInput = HasControl ? InputManager.Instance.XInput : XIAInput;
+        if(horizontalInput != 0)
         {
             //Accelerate to max Speed
-            horizontalSpeed += InputManager.Instance.XInput * Time.deltaTime * controllerData.acceleration;
+            horizontalSpeed += horizontalInput * Time.deltaTime * controllerData.acceleration;
             horizontalSpeed = Mathf.Clamp(horizontalSpeed, -controllerData.maxHorizontalSpeed, controllerData.maxHorizontalSpeed);
         }
         else
@@ -189,12 +203,9 @@ public class PlayerController : MonoBehaviour
 
     public void HandleJump()
     {
-        if (InputManager.Instance.JumpDown && CanUseCoyote || HasBufferedJump)
+        if (HasControl && InputManager.Instance.JumpDown)
         {
-            verticalSpeed = controllerData.jumpSpeed;
-            endedJumpEarly = false;
-            coyoteUsable = false;
-            timeLeftGrounded = float.MinValue;
+            Jump();
         }
 
         if (!downCol.isColliding && InputManager.Instance.JumpUp && !endedJumpEarly && Velocity.y > 0)
@@ -206,6 +217,17 @@ public class PlayerController : MonoBehaviour
         {
             if (verticalSpeed > 0)
                 verticalSpeed = 0;
+        }
+    }
+
+    public void Jump()
+    {
+        if(downCol.isColliding || CanUseCoyote || HasBufferedJump)
+        {
+            verticalSpeed = controllerData.jumpSpeed;
+            endedJumpEarly = false;
+            coyoteUsable = false;
+            timeLeftGrounded = float.MinValue;
         }
     }
 
