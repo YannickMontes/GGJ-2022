@@ -3094,8 +3094,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1383e884f5efcbb4387336b94f5d2847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!61 &514124435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3707,8 +3707,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9dbcac59e6cbe8a44b8301da718ccdee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!61 &970314651
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4460,8 +4460,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1383e884f5efcbb4387336b94f5d2847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!61 &1859376683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4928,7 +4928,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5377760847478840098, guid: d713eb1a155d1dd4eb72bdb9c7ed189c, type: 3}
       propertyPath: m_Follow
-      value: 
+      value:
       objectReference: {fileID: 115733756}
     - target: {fileID: 5377760847478840099, guid: d713eb1a155d1dd4eb72bdb9c7ed189c, type: 3}
       propertyPath: m_IsActive
@@ -4952,7 +4952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5377760848965143724, guid: d713eb1a155d1dd4eb72bdb9c7ed189c, type: 3}
       propertyPath: m_Follow
-      value: 
+      value:
       objectReference: {fileID: 115733756}
     - target: {fileID: 5377760848965143724, guid: d713eb1a155d1dd4eb72bdb9c7ed189c, type: 3}
       propertyPath: m_Lens.OrthographicSize
