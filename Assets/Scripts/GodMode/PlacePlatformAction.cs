@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class PlacePlatformAction : GodActionWithData<PlacePlatformActionData>
 {
@@ -46,23 +45,5 @@ public class PlacePlatformAction : GodActionWithData<PlacePlatformActionData>
     protected void MovePreviewObjectToMousePos()
     {
         previewObject.transform.position = Utils.GetCellCenterFromMouse(LevelManager.Instance.GroundTilemap);
-    }
-}
-
-
-public static class Utils
-{
-    public static Vector3 GetScreenPosFromMouse()
-    {
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        worldPos.z = 0.0f;
-        return worldPos;
-    }
-
-    public static Vector3 GetCellCenterFromMouse(Tilemap tileMap)
-    {
-        Vector3 worldPos = GetScreenPosFromMouse();
-        Vector3Int cellPos = tileMap.WorldToCell(worldPos);
-        return tileMap.GetCellCenterWorld(cellPos);
     }
 }

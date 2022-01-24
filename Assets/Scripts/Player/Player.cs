@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
 
     public void RespawnLastCheckpoint()
     {
-        LevelManager.Instance.ClearDynamicSpawnObjects();
+        LevelManager.Instance.OnReloadLevel();
         transform.position = LastCheckpoint;
     }
 }

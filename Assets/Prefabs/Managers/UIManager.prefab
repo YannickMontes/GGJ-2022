@@ -390,6 +390,8 @@ GameObject:
   - component: {fileID: 1317129632883571020}
   - component: {fileID: 1366725572081165406}
   - component: {fileID: 2400663110019535595}
+  - component: {fileID: 5648176096533686689}
+  - component: {fileID: 1087629593304284871}
   m_Layer: 0
   m_Name: Tomar
   m_TagString: Untagged
@@ -499,6 +501,40 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &5648176096533686689
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307592864925482683}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c2c002a349e962478301b15274e7b10, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1087629593304284871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307592864925482683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77bb5085978cf4b4eba02ba9dd54474a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5648176096533686689}
+  actionData: {fileID: 11400000, guid: e7cf7c6e52c36b743bf765db588929f0, type: 2}
 --- !u!1 &6372520972750529473
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   godActions:
   - {fileID: 5248156178869759517}
+  - {fileID: 1087629593304284871}
   selectedParam: Selected
 --- !u!1 &8823149219778806640
 GameObject:

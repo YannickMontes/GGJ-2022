@@ -22,7 +22,7 @@ public class InputManager : Singleton<InputManager>
         public InputValue(bool init)
         {
             byType = new Dictionary<EInputType, bool>();
-            foreach(EInputType inputType in Enum.GetValues(typeof(EInput)))
+            foreach(EInputType inputType in Enum.GetValues(typeof(EInputType)))
             {
                 byType.Add(inputType, init);
             }
