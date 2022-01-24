@@ -21,7 +21,10 @@ MonoBehaviour:
   collidersIterations: 10
   groundLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
+  breakableLayer:
+    serializedVersion: 2
+    m_Bits: 0
   maxHorizontalSpeed: 17
   acceleration: 110
   deceleration: 100

@@ -107,6 +107,8 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 8bcdb60f2d2f7d142855070e0108129b, type: 2}
   colliders:
   - {fileID: 4777748776273472016}
+  renderers:
+  - {fileID: 298134534488123108}
 --- !u!1 &5455683256367554998
 GameObject:
   m_ObjectHideFlags: 0

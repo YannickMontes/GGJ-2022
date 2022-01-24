@@ -11,6 +11,7 @@ public class PlayerControllerData : ScriptableObject
     public float rayRange = 0.3f;
     public int collidersIterations = 10;
     public LayerMask groundLayer;
+    public LayerMask breakableLayer;
 
     [Header("Horizontal Movement")]
     public float maxHorizontalSpeed = 10.0f;

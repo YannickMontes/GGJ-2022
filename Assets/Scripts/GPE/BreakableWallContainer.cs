@@ -11,6 +11,7 @@ public class BreakableWallContainer
     public BreakableWallContainer(BreakableWallData data)
     {
         this.data = data;
+        CurrentLife = data.maxLife;
     }
 
     public void Respawn()
