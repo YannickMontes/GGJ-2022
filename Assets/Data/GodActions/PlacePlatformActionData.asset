@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93f3e5cff50a6df468049dd1ab390819, type: 3}
+  m_Name: PlacePlatformActionData
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  previewObject: {fileID: 1163456936541603978, guid: ae967379f3a8fc64898dd22fcc7a6a26, type: 3}
+  platformToPlace: {fileID: 1766506215062379544, guid: c631d4afaeff80b45a188d92010da357, type: 3}

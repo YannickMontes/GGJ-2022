@@ -22,7 +22,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  maxHorizontalSpeed: 40
+  maxHorizontalSpeed: 35
   acceleration: 200
   deceleration: 200
   fallClamp: -90

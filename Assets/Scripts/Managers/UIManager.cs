@@ -10,6 +10,7 @@ public class UIManager : Singleton<UIManager>
     private void Start()
     {
         GameManager.Instance.OnChangeStateAction += OnGameManagerStateChanged;
+        OnGameManagerStateChanged(GameManager.Instance.CurrentState);
     }
 
     private void OnGameManagerStateChanged(GameManager.EGameState newState)
