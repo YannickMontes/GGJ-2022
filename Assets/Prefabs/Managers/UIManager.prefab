@@ -610,6 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   godActions:
   - {fileID: 5248156178869759517}
+  - {fileID: 6015851347110702985}
   - {fileID: 1087629593304284871}
   selectedParam: Selected
 --- !u!1 &8823149219778806640
@@ -624,6 +625,8 @@ GameObject:
   - component: {fileID: 8262774296175234146}
   - component: {fileID: 1088901271712945440}
   - component: {fileID: 8266707422453378694}
+  - component: {fileID: 7781005872874796905}
+  - component: {fileID: 6015851347110702985}
   m_Layer: 0
   m_Name: Bumper
   m_TagString: Untagged
@@ -733,3 +736,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &7781005872874796905
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823149219778806640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c2c002a349e962478301b15274e7b10, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6015851347110702985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823149219778806640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7a57a39ec37f49a82182f4f188e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7781005872874796905}
+  actionData: {fileID: 11400000, guid: d35660060f484da4fb91f43a8220ab40, type: 2}

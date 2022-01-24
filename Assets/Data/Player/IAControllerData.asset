@@ -25,7 +25,7 @@ MonoBehaviour:
   breakableLayer:
     serializedVersion: 2
     m_Bits: 0
-  maxHorizontalSpeed: 0
+  maxHorizontalSpeed: 35
   acceleration: 200
   deceleration: 200
   fallClamp: -90

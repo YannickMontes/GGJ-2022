@@ -34,11 +34,11 @@ public class IAController : MonoBehaviour
         if(playerController.IsCollidingDown())
         {
             if (HasWallFront() && playerController.Velocity.y <= 0)
-                playerController.Jump();
+                playerController.JumpWithDataForce();
         }
         else if(playerController.Velocity.y <= 0)
         {
-            playerController.Jump();
+            playerController.JumpWithDataForce();
         }
 
         playerController.XIAInput = 1.0f;

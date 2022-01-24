@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
     {
         if (HasControl && InputManager.Instance.JumpDown)
         {
-            Jump();
+            JumpWithDataForce();
         }
 
         if (!downCol.isColliding && InputManager.Instance.JumpUp && !endedJumpEarly && Velocity.y > 0)
@@ -220,11 +220,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Jump()
+    public void JumpWithDataForce()
+    {
+        Jump(controllerData.jumpSpeed);
+    }
+
+    public void JumpWithOverrideForce(float force)
+    {
+        Jump(force);
+    }
+
+    private void Jump(float jumpSpeed)
     {
         if(downCol.isColliding || CanUseCoyote || HasBufferedJump)
         {
-            verticalSpeed = controllerData.jumpSpeed;
+            verticalSpeed = jumpSpeed;
             endedJumpEarly = false;
             coyoteUsable = false;
             timeLeftGrounded = float.MinValue;
