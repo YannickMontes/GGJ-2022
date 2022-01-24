@@ -2,35 +2,27 @@
 
 public class PreviewPlatform : MonoBehaviour
 {
-    public bool IsCollidingGround { get; private set; }
+    public bool IsCollidingGround { get { return nbColliding > 0; } }
+
+    private int nbColliding = 0;
 
     public void OnEnable()
     {
-        IsCollidingGround = false;
+        nbColliding = 0;
     }
 
     private void OnDisable()
     {
-        IsCollidingGround = false;
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        IsCollidingGround = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        IsCollidingGround = false;
+        nbColliding = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IsCollidingGround = true;
+        nbColliding++;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IsCollidingGround = false;
+        nbColliding--;
     }
 }

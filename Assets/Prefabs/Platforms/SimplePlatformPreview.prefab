@@ -7,13 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 780360316630409504, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443298375463026329, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
     - target: {fileID: 1478072258258661022, guid: c631d4afaeff80b45a188d92010da357, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1766506215062379544, guid: c631d4afaeff80b45a188d92010da357, type: 3}
       propertyPath: m_Name
-      value: PlacePlatformPreview
+      value: SimplePlatformPreview
       objectReference: {fileID: 0}
     - target: {fileID: 1766506215062379544, guid: c631d4afaeff80b45a188d92010da357, type: 3}
       propertyPath: m_Layer
@@ -111,7 +119,31 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2754607414774196519, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165819031277100584, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 3339932839366386731, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
     - target: {fileID: 3663371192155330922, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6067845513335572836, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782482972112719799, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426927916844413285, guid: c631d4afaeff80b45a188d92010da357, type: 3}
       propertyPath: m_Color.a
       value: 0.39215687
       objectReference: {fileID: 0}
@@ -123,6 +155,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8729781617491468176, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864768724350813803, guid: c631d4afaeff80b45a188d92010da357, type: 3}
+      propertyPath: m_Color.a
+      value: 0.39215687
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c631d4afaeff80b45a188d92010da357, type: 3}
 --- !u!1 &1163456936541603978 stripped
@@ -130,18 +170,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1766506215062379544, guid: c631d4afaeff80b45a188d92010da357, type: 3}
   m_PrefabInstance: {fileID: 623337195554919570}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7841900868486360366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163456936541603978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116a0cf89b273294e82f9b23e6d2afff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &5842581676965010956
 Rigidbody2D:
   serializedVersion: 4
@@ -163,3 +191,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7841900868486360366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163456936541603978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116a0cf89b273294e82f9b23e6d2afff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
