@@ -31,8 +31,7 @@ public class PlacePlatformAction : GodActionWithData<PlacePlatformActionData>
 
     protected override void Execute()
     {
-        GameObject newPlatform = Instantiate(Data.platformToPlace);
-        newPlatform.transform.position = Utils.GetCellCenterFromMouse(LevelManager.Instance.GroundTilemap);
+        LevelManager.Instance.SpawnDynamicObject(Data.platformToPlace, Utils.GetCellCenterFromMouse(LevelManager.Instance.GroundTilemap));
     }
 
     protected override void Update()
