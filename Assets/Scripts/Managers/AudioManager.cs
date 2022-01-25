@@ -12,7 +12,7 @@ public class AudioManager : Singleton<AudioManager>
     void Start()
     {
         audioSource = this.GetComponent<AudioSource>();
-        DialogueManager.Instance.OnchangeDialogue += PlayAudio;
+        DialogManagerUI.Instance.OnchangeDialogue += PlayAudio;
     }
 
     // Update is called once per frame

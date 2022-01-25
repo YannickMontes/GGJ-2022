@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/DialogueAudio")]
 public class DialogueInfosData : ScriptableObject
 {
-    public List<string> key; 
-    public List<AudioClip> audioClip;
-    public List<bool> character;
-    public List<Sprite> dialogueImage;
+    [Serializable]
+    public class DialogLine
+    {
+        public string key;
+        public AudioClip clip;
+        public CharacterDialogData speaker;
+    }
+
+    public List<DialogLine> dialogLines = new List<DialogLine>();
 }

@@ -11,7 +11,8 @@ public class InputManager : Singleton<InputManager>
         ChooseAction1,
         ChooseAction2,
         ChooseAction3,
-        DoAction
+        DoAction,
+        Interact
     }
 
     [Serializable]

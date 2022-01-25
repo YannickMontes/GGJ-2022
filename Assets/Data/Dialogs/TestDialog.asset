@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e622e764e290fe4083588fca2b8e7ae, type: 3}
-  m_Name: DialogueInfosData
+  m_Name: TestDialog
   m_EditorClassIdentifier: 
-  key:
-  - test
-  audioClip:
-  - {fileID: 8300000, guid: 81b85e8a49d449b428a0675dc7ab5da4, type: 3}
-  character: 00
-  dialogueImage:
-  - {fileID: 21300000, guid: dae52d4aea30a764ea9814d7af5e9f9b, type: 3}
+  dialogLines:
+  - key: DIAL_1_YANA1
+    clip: {fileID: 0}
+    speaker: {fileID: 11400000, guid: b77da4b64d04eab4ea41ecbc102039ff, type: 2}
+  - key: DIAL_1_HASA1
+    clip: {fileID: 0}
+    speaker: {fileID: 11400000, guid: 45c01bd5b42b5914e90b769bbc68e52e, type: 2}
