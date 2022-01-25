@@ -36,4 +36,5 @@ MonoBehaviour:
   coyoteTime: 0.1
   jumpBufferTime: 0.1
   endEarlyJumpModifier: 3
+  jumpAudio: {fileID: 8300000, guid: cd817a02fc8e58c41ba736cc55a570c1, type: 3}
   drawRaycast: 1

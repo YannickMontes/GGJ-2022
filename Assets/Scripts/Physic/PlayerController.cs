@@ -234,6 +234,8 @@ public class PlayerController : MonoBehaviour
     {
         if(downCol.isColliding || CanUseCoyote || HasBufferedJump)
         {
+            if(controllerData.jumpAudio != null)
+                AudioManager.Instance.PlayAudio(controllerData.jumpAudio);
             verticalSpeed = jumpSpeed;
             endedJumpEarly = false;
             coyoteUsable = false;

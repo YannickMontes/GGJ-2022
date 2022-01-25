@@ -108,7 +108,6 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
 
     void DisplayDialogue(string lines,AudioClip clip, bool isGod, Sprite dialogueImage)
     {
-        OnchangeDialogue?.Invoke(clip);
         if(isGod){
             humanDialogueUI.SetActive(false);
             godDialogueUI.SetActive(true);
@@ -121,5 +120,6 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
             humanImage.sprite = dialogueImage;
             humanDialog.text = lines;
         }
+        AudioManager.Instance.PlayAudio(clip);
     }
 }

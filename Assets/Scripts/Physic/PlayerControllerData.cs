@@ -29,6 +29,7 @@ public class PlayerControllerData : ScriptableObject
     public float coyoteTime = 0.1f;
     public float jumpBufferTime = 0.1f;
     public float endEarlyJumpModifier = 3;
+    public AudioClip jumpAudio = null;
 
     [Header("Debug")]
     public bool drawRaycast = true;

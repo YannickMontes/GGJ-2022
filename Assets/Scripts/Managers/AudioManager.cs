@@ -1,32 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    // Start is called before the first frame update
-    AudioSource audioSource;
-    public DialogueInfosData dialogueInfo;
-    public Action<String> OnchangeAudio = null;
-    void Start()
-    {
-        audioSource = this.GetComponent<AudioSource>();
-        DialogManagerUI.Instance.OnchangeDialogue += PlayAudio;
-    }
+    public AudioSource audioSource = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void PlayAudio(AudioClip clip){
+    public void PlayAudio(AudioClip clip){
         audioSource.clip = clip;  
         audioSource.Play();
     }
 
-    void stopAudio(){
+    public void stopAudio(){
         audioSource.Stop();
     }
 }
