@@ -18,4 +18,4 @@ MonoBehaviour:
     speaker: {fileID: 11400000, guid: b77da4b64d04eab4ea41ecbc102039ff, type: 2}
   - key: DIAL_1_HASA1
     clip: {fileID: 0}
-    speaker: {fileID: 11400000, guid: 45c01bd5b42b5914e90b769bbc68e52e, type: 2}
+    speaker: {fileID: 11400000, guid: 3f8a6e3a580b41b4bb4d3709442abd6b, type: 2}
