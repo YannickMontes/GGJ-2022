@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,17 +8,22 @@ public class Player : MonoBehaviour
     public PlayerControllerData playerData = null;
     public PlayerControllerData iaData = null;
 
+    public HealthController healthController = null;
+
     public Vector3 LastCheckpoint { get; set; }
 
     private void Awake()
     {
         LastCheckpoint = transform.position;
         LevelManager.Instance.OnReloadLevelAction += RespawnLastCheckpoint;
+        healthController = new HealthController(playerData.healthData);
+        healthController.OnDeathAction += LevelManager.Instance.ReloadLevel;
     }
 
     private void OnDestroy()
     {
         LevelManager.Instance.OnReloadLevelAction -= RespawnLastCheckpoint;
+        healthController.OnDeathAction -= LevelManager.Instance.ReloadLevel;
     }
 
     public void TriggerAltar()
@@ -42,5 +45,6 @@ public class Player : MonoBehaviour
     public void RespawnLastCheckpoint()
     {
         transform.position = LastCheckpoint;
+        healthController.RefillLife();
     }
 }

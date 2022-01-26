@@ -2,14 +2,35 @@
 
 public abstract class TriggerOnPlayer : MonoBehaviour 
 {
+    protected bool PlayerIsStillOnTrigger { get; set; }
+
+    protected Player Player { get; set; }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Player player = collision.transform.root.GetComponentInChildren<Player>();
         if (player != null)
         {
-            OnPlayerTrigger(player);
+            Player = player;
+            OnPlayerTriggerEnter(player);
+            PlayerIsStillOnTrigger = true;
         }
     }
 
-    protected abstract void OnPlayerTrigger(Player player);
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Player player = collision.transform.root.GetComponentInChildren<Player>();
+        if (player != null)
+        {
+            OnPlayerTriggerExit(player);
+            PlayerIsStillOnTrigger = false;
+            Player = null;
+        }
+    }
+
+    protected abstract void OnPlayerTriggerEnter(Player player);
+    protected virtual void OnPlayerTriggerExit(Player player)
+    {
+
+    }
 }

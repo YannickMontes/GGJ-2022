@@ -25,7 +25,7 @@ public class FallingPlatform : TriggerOnPlayer
         LevelManager.Instance.OnReloadLevelAction -= Respawn;
     }
 
-    protected override void OnPlayerTrigger(Player player)
+    protected override void OnPlayerTriggerEnter(Player player)
     {
         if(currentState == EState.IDLE)
         {

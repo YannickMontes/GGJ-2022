@@ -31,6 +31,9 @@ public class PlayerControllerData : ScriptableObject
     public float endEarlyJumpModifier = 3;
     public AudioClip jumpAudio = null;
 
+    [Header("Health")]
+    public HealthControllerData healthData = null;
+
     [Header("Debug")]
     public bool drawRaycast = true;
 }

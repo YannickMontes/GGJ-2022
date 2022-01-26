@@ -1,6 +1,6 @@
 public class SafeZone : TriggerOnPlayer
 {
-    protected override void OnPlayerTrigger(Player player)
+    protected override void OnPlayerTriggerEnter(Player player)
     {
         player.TriggerSafeZone();
     }

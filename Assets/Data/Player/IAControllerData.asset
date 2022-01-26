@@ -36,4 +36,6 @@ MonoBehaviour:
   coyoteTime: 0.1
   jumpBufferTime: 0.1
   endEarlyJumpModifier: 3
+  jumpAudio: {fileID: 0}
+  healthData: {fileID: 11400000, guid: b5afcf51b7b0c8940b7feabc6c441bb8, type: 2}
   drawRaycast: 1

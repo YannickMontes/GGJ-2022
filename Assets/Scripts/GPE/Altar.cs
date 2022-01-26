@@ -12,7 +12,7 @@ public class Altar : TriggerOnPlayer
 
     protected bool isClose = true;
 
-    protected override void OnPlayerTrigger(Player player)
+    protected override void OnPlayerTriggerEnter(Player player)
     {
         if (triggerBehavior == ETriggerBehavior.TRIGGER)
         {

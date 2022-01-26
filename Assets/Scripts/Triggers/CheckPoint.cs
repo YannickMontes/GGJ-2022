@@ -1,6 +1,6 @@
 ﻿public class CheckPoint : TriggerOnPlayer
 {
-    protected override void OnPlayerTrigger(Player player)
+    protected override void OnPlayerTriggerEnter(Player player)
     {
         player.LastCheckpoint = transform.position;
     }
