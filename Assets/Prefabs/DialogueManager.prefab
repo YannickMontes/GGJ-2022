@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8206580594493656153}
   - component: {fileID: 8206580594493656159}
   - component: {fileID: 8206580594493656158}
+  - component: {fileID: 3041466935569630690}
   m_Layer: 0
   m_Name: HumanDialogue
   m_TagString: Untagged
@@ -135,6 +136,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3041466935569630690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206580594493656152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5242c8ff3a87d042840d017d8424713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 8206580594493656158}
+  data: {fileID: 11400000, guid: bc6e26eab53df5f4eb8d427b0d84e7a4, type: 2}
 --- !u!1 &8206580594530136109
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +200,7 @@ GameObject:
   - component: {fileID: 8206580594548478058}
   - component: {fileID: 8206580594548478053}
   - component: {fileID: 8448906160768442762}
+  - component: {fileID: 9213661363068435574}
   m_Layer: 0
   m_Name: GodDialogue
   m_TagString: Untagged
@@ -323,6 +339,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!114 &9213661363068435574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206580594548478055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5242c8ff3a87d042840d017d8424713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 8206580594548478053}
+  data: {fileID: 11400000, guid: bc6e26eab53df5f4eb8d427b0d84e7a4, type: 2}
 --- !u!1 &8206580594698498028
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,9 +482,9 @@ MonoBehaviour:
   godDialogueUI: {fileID: 8206580594530136109}
   humanDialogueUI: {fileID: 8206580594698498028}
   godImage: {fileID: 8206580595856796301}
-  godDialog: {fileID: 8206580594548478053}
+  godDialog: {fileID: 9213661363068435574}
   humanImage: {fileID: 8206580595420022209}
-  humanDialog: {fileID: 8206580594493656158}
+  humanDialog: {fileID: 3041466935569630690}
   csvText: {fileID: 4900000, guid: 7618a81fa5d7ed64eb0e27060f06f920, type: 3}
 --- !u!1 &8206580595420022211
 GameObject:

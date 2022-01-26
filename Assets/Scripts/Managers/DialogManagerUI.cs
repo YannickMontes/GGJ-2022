@@ -15,10 +15,10 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
     public GameObject humanDialogueUI;
 
     public Image godImage = null;
-    public TextMeshProUGUI godDialog = null;
+    public ProgressiveTextUI godDialog = null;
 
     public Image humanImage = null;
-    public TextMeshProUGUI humanDialog = null;
+    public ProgressiveTextUI humanDialog = null;
 
     public TextAsset csvText = null;
 
@@ -30,6 +30,7 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
 
     private DialogueInfosData currentDialog = null;
     private int currentLineIndex = 0;
+    private ProgressiveTextUI currentProgressiveUI = null;
 
     private void OnEnable()
     {
@@ -75,9 +76,15 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
             currentLineIndex++;
             DialogueInfosData.DialogLine dialogLine = currentDialog.dialogLines[currentLineIndex];
             Traduction trad = null;
-            locKeysTrad.TryGetValue(dialogLine.key, out trad);
-            DisplayDialogue(trad.traductions[0], dialogLine.clip, dialogLine.speaker.isGod, dialogLine.speaker.characterSprite);
-            OnDialogNewLine?.Invoke();
+            if(locKeysTrad.TryGetValue(dialogLine.key, out trad))
+            {
+                DisplayDialogue(trad.traductions[0], dialogLine.clip, dialogLine.speaker.isGod, dialogLine.speaker.characterSprite);
+                OnDialogNewLine?.Invoke();
+            }
+            else
+            {
+                Debug.LogError($"No trad for this key {dialogLine.key} !");
+            }
         }
         else
         {
@@ -101,7 +108,14 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
         {
             if(InputManager.Instance.GetInputValue(InputManager.EInput.Interact, InputManager.EInputType.Down))
             {
-                DisplayNextLine();
+                if(currentProgressiveUI.IsWriting)
+                {
+                    currentProgressiveUI.Skip();
+                }
+                else
+                {
+                    DisplayNextLine();
+                }
             }
         }
     }
@@ -112,13 +126,15 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
             humanDialogueUI.SetActive(false);
             godDialogueUI.SetActive(true);
             godImage.sprite = dialogueImage;
-            godDialog.text = lines;
+            currentProgressiveUI = godDialog;
+            godDialog.DisplayText(lines);
         } else
         {
             humanDialogueUI.SetActive(true);
             godDialogueUI.SetActive(false);
             humanImage.sprite = dialogueImage;
-            humanDialog.text = lines;
+            currentProgressiveUI = humanDialog;
+            humanDialog.DisplayText(lines);
         }
         AudioManager.Instance.PlayAudio(clip);
     }

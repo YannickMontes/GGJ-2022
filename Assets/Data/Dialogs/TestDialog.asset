@@ -16,6 +16,6 @@ MonoBehaviour:
   - key: DIAL_A01_S01_01_YANA
     clip: {fileID: 0}
     speaker: {fileID: 11400000, guid: b77da4b64d04eab4ea41ecbc102039ff, type: 2}
-  - key: DIAL_A01_S01_01_HASA
+  - key: DIAL_A01_S01_02_HASA
     clip: {fileID: 0}
     speaker: {fileID: 11400000, guid: 3f8a6e3a580b41b4bb4d3709442abd6b, type: 2}
