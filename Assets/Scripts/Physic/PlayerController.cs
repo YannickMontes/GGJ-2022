@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     private void CalcultateRayRange()
     {
-        Bounds actualBounds = new Bounds(transform.position, controllerData.bounds.size);
+        Bounds actualBounds = new Bounds(transform.position + controllerData.bounds.center, controllerData.bounds.size);
         downRays = new RayRange(actualBounds.min.x + controllerData.fromBoundsOffset, actualBounds.min.y, actualBounds.max.x - controllerData.fromBoundsOffset, actualBounds.min.y, Vector2.down);
         upRays = new RayRange(actualBounds.min.x + controllerData.fromBoundsOffset, actualBounds.max.y, actualBounds.max.x - controllerData.fromBoundsOffset, actualBounds.max.y, Vector2.up);
         leftRays = new RayRange(actualBounds.min.x, actualBounds.min.y + controllerData.fromBoundsOffset, actualBounds.min.x, actualBounds.max.y - controllerData.fromBoundsOffset, Vector2.left);
@@ -246,7 +246,7 @@ public class PlayerController : MonoBehaviour
     public void ApplyMovement()
     {
         Vector3 moveSpeed = new Vector2(horizontalSpeed, verticalSpeed) * Time.deltaTime;
-        Vector3 furthestPoint = transform.position + moveSpeed;
+        Vector3 furthestPoint = transform.position + moveSpeed + controllerData.bounds.center;
 
         Collider2D hit = Physics2D.OverlapBox(furthestPoint, controllerData.bounds.size, 0, controllerData.groundLayer);
         if (hit == null)

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerControllerData
   m_EditorClassIdentifier: 
   bounds:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.4, y: 0.4, z: 0.3}
-  nbRayToCast: 5
+    m_Center: {x: 0, y: 0.5, z: 0}
+    m_Extent: {x: 0.4, y: 1, z: 0.3}
+  nbRayToCast: 10
   fromBoundsOffset: 0.1
   rayRange: 0.3
   collidersIterations: 10
