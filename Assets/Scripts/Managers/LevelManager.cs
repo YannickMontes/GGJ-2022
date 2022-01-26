@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class LevelManager : Singleton<LevelManager>
 
     public LayerMask breakableWallLayer;
 
+    public Action OnReloadLevelAction = null;
+
     private List<GameObject> dynamicSpawnedObjects = new List<GameObject>();
     private List<BreakableWallContainer> breakableWallsContainer = new List<BreakableWallContainer>();
 
@@ -21,10 +24,11 @@ public class LevelManager : Singleton<LevelManager>
         return obj;
     }
 
-    public void OnReloadLevel()
+    public void ReloadLevel()
     {
         ClearDynamicSpawnObjects();
         RefillBreakableWalls();
+        OnReloadLevelAction?.Invoke();
     }
 
     protected override void Awake()

@@ -15,6 +15,12 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         LastCheckpoint = transform.position;
+        LevelManager.Instance.OnReloadLevelAction += RespawnLastCheckpoint;
+    }
+
+    private void OnDestroy()
+    {
+        LevelManager.Instance.OnReloadLevelAction -= RespawnLastCheckpoint;
     }
 
     public void TriggerAltar()
@@ -35,7 +41,6 @@ public class Player : MonoBehaviour
 
     public void RespawnLastCheckpoint()
     {
-        LevelManager.Instance.OnReloadLevel();
         transform.position = LastCheckpoint;
     }
 }
