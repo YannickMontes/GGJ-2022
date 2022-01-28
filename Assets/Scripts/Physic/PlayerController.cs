@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public float XIAInput { get; set; } = 0.0f;
 
     public PlayerControllerData controllerData = null;
+    public Animator animator;
 
     private bool isActivated = false;
 
@@ -80,6 +81,20 @@ public class PlayerController : MonoBehaviour
             return;
 
         Velocity = (transform.position - lastPosition) / Time.deltaTime;
+        if (Velocity.x != 0)
+        {
+            animator.SetBool("IsRunning", true);
+        } else
+        {
+            animator.SetBool("IsRunning", false);
+        }
+        Debug.Log(Velocity.y);
+        if(Velocity.y < 40)
+        {
+            animator.SetTrigger("StarHighTransition");
+        }
+        animator.SetBool("TouchGround", coyoteUsable);
+
         lastPosition = transform.position;
 
         bool wasCollidingGroundLastFrame = downCol.isColliding;
@@ -206,6 +221,7 @@ public class PlayerController : MonoBehaviour
         if (HasControl && InputManager.Instance.JumpDown)
         {
             JumpWithDataForce();
+            animator.SetTrigger("StartJump");
         }
 
         if (!downCol.isColliding && InputManager.Instance.JumpUp && !endedJumpEarly && Velocity.y > 0)
