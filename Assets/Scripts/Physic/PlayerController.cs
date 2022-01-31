@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     public PlayerControllerData controllerData = null;
     public Animator animator;
+    public SpriteRenderer spriteRenderer = null;
 
     private bool isActivated = false;
 
@@ -81,19 +82,18 @@ public class PlayerController : MonoBehaviour
             return;
 
         Velocity = (transform.position - lastPosition) / Time.deltaTime;
-        if (Velocity.x != 0)
+        animator.SetFloat("XVelocity", Velocity.x);
+        animator.SetFloat("YVelocity", Velocity.y);
+        animator.SetBool("IsGrounded", IsCollidingDown());
+        animator.SetBool("IsRunning", Velocity.x != 0.0f);
+        if(Velocity.x > 0.0f)
         {
-            animator.SetBool("IsRunning", true);
-        } else
-        {
-            animator.SetBool("IsRunning", false);
+            spriteRenderer.flipX = false;
         }
-        if(Velocity.y < 40)
+        else if(Velocity.x < 0.0f)
         {
-            animator.SetTrigger("StarHighTransition");
+            spriteRenderer.flipX = true;
         }
-        animator.SetBool("TouchGround", coyoteUsable);
-
         lastPosition = transform.position;
 
         bool wasCollidingGroundLastFrame = downCol.isColliding;
@@ -249,8 +249,7 @@ public class PlayerController : MonoBehaviour
     {
         if(downCol.isColliding || CanUseCoyote || HasBufferedJump)
         {
-            if(controllerData.jumpAudio != null)
-                AudioManager.Instance.PlayAudio(controllerData.jumpAudio);
+            AudioManager.Instance.StartEvent(controllerData.jumpEventRef);
             verticalSpeed = jumpSpeed;
             endedJumpEarly = false;
             coyoteUsable = false;

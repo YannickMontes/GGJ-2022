@@ -29,11 +29,15 @@ public class PlayerControllerData : ScriptableObject
     public float coyoteTime = 0.1f;
     public float jumpBufferTime = 0.1f;
     public float endEarlyJumpModifier = 3;
-    public AudioClip jumpAudio = null;
 
     [Header("Health")]
     public HealthControllerData healthData = null;
 
+    [Header("Audio")]
+    public FMODUnity.EventReference jumpEventRef;
+    public FMODUnity.EventReference footstepEventRef;
+
     [Header("Debug")]
     public bool drawRaycast = true;
+
 }

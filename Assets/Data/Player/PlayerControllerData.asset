@@ -36,6 +36,19 @@ MonoBehaviour:
   coyoteTime: 0.1
   jumpBufferTime: 0.1
   endEarlyJumpModifier: 3
-  jumpAudio: {fileID: 8300000, guid: cd817a02fc8e58c41ba736cc55a570c1, type: 3}
   healthData: {fileID: 11400000, guid: b5afcf51b7b0c8940b7feabc6c441bb8, type: 2}
+  jumpEventRef:
+    Guid:
+      Data1: 2093145755
+      Data2: 1083656526
+      Data3: -1620972619
+      Data4: 927212867
+    Path: event:/player/jump
+  footstepEventRef:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   drawRaycast: 1

@@ -78,7 +78,7 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
             Traduction trad = null;
             if(locKeysTrad.TryGetValue(dialogLine.key, out trad))
             {
-                DisplayDialogue(trad.traductions[0], dialogLine.clip, dialogLine.speaker.isGod, dialogLine.speaker.characterSprite);
+                DisplayDialogue(trad.traductions[0], dialogLine.eventRef, dialogLine.speaker.isGod, dialogLine.speaker.characterSprite);
                 OnDialogNewLine?.Invoke();
             }
             else
@@ -120,7 +120,7 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
         }
     }
 
-    void DisplayDialogue(string lines,AudioClip clip, bool isGod, Sprite dialogueImage)
+    void DisplayDialogue(string lines, FMODUnity.EventReference eventRef, bool isGod, Sprite dialogueImage)
     {
         if(isGod){
             humanDialogueUI.SetActive(false);
@@ -136,6 +136,6 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
             currentProgressiveUI = humanDialog;
             humanDialog.DisplayText(lines);
         }
-        AudioManager.Instance.PlayAudio(clip);
+        AudioManager.Instance.StartEvent(eventRef);
     }
 }

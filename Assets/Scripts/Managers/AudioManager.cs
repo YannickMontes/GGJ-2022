@@ -1,15 +1,32 @@
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    public AudioSource audioSource = null;
+    public EventInstance? StartEvent(EventReference evt, Transform transform = null)
+    {
+        if (evt.IsNull)
+            return null;
 
-    public void PlayAudio(AudioClip clip){
-        audioSource.clip = clip;  
-        audioSource.Play();
+        EventInstance evtInstance = RuntimeManager.CreateInstance(evt);
+
+        if(transform != null)
+        {
+            RuntimeManager.AttachInstanceToGameObject(evtInstance, transform);
+        }
+
+        evtInstance.start();
+        return evtInstance;
     }
 
-    public void stopAudio(){
-        audioSource.Stop();
+    public void StopEvent(EventInstance evtInstance, FMOD.Studio.STOP_MODE stopMode = FMOD.Studio.STOP_MODE.ALLOWFADEOUT)
+    {
+        evtInstance.stop(stopMode);
+    }
+
+    public void SetGlobalParameter(string paramName, float value)
+    {
+        RuntimeManager.StudioSystem.setParameterByName(paramName, value);
     }
 }

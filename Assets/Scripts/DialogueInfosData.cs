@@ -10,7 +10,7 @@ public class DialogueInfosData : ScriptableObject
     public class DialogLine
     {
         public string key;
-        public AudioClip clip;
+        public FMODUnity.EventReference eventRef;
         public CharacterDialogData speaker;
     }
 

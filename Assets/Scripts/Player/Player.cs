@@ -47,4 +47,9 @@ public class Player : MonoBehaviour
         transform.position = LastCheckpoint;
         healthController.RefillLife();
     }
+
+    public void PlayFootsteps()
+    {
+        AudioManager.Instance.StartEvent(playerData.footstepEventRef, transform);
+    }
 }
