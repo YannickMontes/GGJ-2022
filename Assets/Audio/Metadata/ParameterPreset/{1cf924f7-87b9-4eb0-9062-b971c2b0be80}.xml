@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{1cf924f7-87b9-4eb0-9062-b971c2b0be80}">
+		<property name="name">
+			<value>platformer_phase</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7564fb38-b68b-4276-92d4-cab017b72d0d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{33a46849-2d93-48fa-b7f0-b14119016604}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{33a46849-2d93-48fa-b7f0-b14119016604}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>menu</value>
+			<value>platformer</value>
+			<value>end</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>

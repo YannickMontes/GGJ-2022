@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{70aa8155-501c-45f7-8630-5846156b677c}">
+		<property name="name">
+			<value>god_mod_phase</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7564fb38-b68b-4276-92d4-cab017b72d0d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{fca86e58-e7d4-4d50-af7f-6916187cd31d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{fca86e58-e7d4-4d50-af7f-6916187cd31d}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Phase 1</value>
+			<value>Phase 2</value>
+			<value>End</value>
+		</property>
+		<property name="isGlobal">
+			<value>true</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
