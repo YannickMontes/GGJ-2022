@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{9bffb04b-689f-4f26-829f-9a9f7fb8bc5b}">
 		<property name="name">
-			<value>platformer</value>
+			<value>level_01</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -38,6 +38,9 @@
 		<relationship name="parameters">
 			<destination>{8cbba275-ea3c-4634-b9a8-1123f9d26476}</destination>
 			<destination>{0305b6d8-4878-429c-8650-db6c0851bc4a}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{a8fd6783-1780-4dd8-ae52-90fe692b3b3e}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{b87207c8-36a2-4666-8738-d9d50fef9256}">
