@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5377760847478840099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -42.666664, y: 0, z: 0}
+  m_LocalPosition: {x: -35.555553, y: -7.5999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -165,15 +165,15 @@ MonoBehaviour:
   m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.099999994
-  m_ScreenY: 0.5
+  m_ScreenY: 0.652
   m_CameraDistance: 10
   m_DeadZoneWidth: 0.117
-  m_DeadZoneHeight: 0.129
+  m_DeadZoneHeight: 2
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.483
-  m_SoftZoneHeight: 0.658
-  m_BiasX: 0.00000010771923
+  m_SoftZoneHeight: 2
+  m_BiasX: 0.00000012214066
   m_BiasY: 0
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 30
+    OrthographicSize: 25
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -384,9 +384,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5377760849242008760}
   - component: {fileID: 5377760849242008761}
-  - component: {fileID: 5377760849242008742}
   - component: {fileID: 5377760849242008763}
   - component: {fileID: 490668704504007676}
+  - component: {fileID: -316177437804116825}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -438,7 +438,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -454,14 +454,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &5377760849242008742
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5377760849242008743}
-  m_Enabled: 1
 --- !u!114 &5377760849242008763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,3 +502,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFollowVCam: {fileID: 5377760847478840098}
   godModeCam: {fileID: 5377760848965143724}
+--- !u!114 &-316177437804116825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377760849242008743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
