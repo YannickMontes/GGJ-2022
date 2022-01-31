@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controllerData: {fileID: 11400000, guid: 29fb6c9231c9f334c804671b4a333aa7, type: 2}
+  animator: {fileID: 2608929380850494764}
 --- !u!114 &2004922007792343309
 MonoBehaviour:
   m_ObjectHideFlags: 0

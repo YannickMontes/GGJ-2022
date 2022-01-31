@@ -88,7 +88,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsRunning", false);
         }
-        Debug.Log(Velocity.y);
         if(Velocity.y < 40)
         {
             animator.SetTrigger("StarHighTransition");
