@@ -38,3 +38,8 @@ sysinfo.txt
 
 # Logs
 *.log
+
+# FMOD
+Assets/Audio/.cache/
+Assets/Audio/.unsaved/
+Assets/Audio/.user/
