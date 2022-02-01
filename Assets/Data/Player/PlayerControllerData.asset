@@ -44,11 +44,8 @@ MonoBehaviour:
       Data3: -1620972619
       Data4: 927212867
     Path: event:/player/jump
-  footstepEventRef:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+  footStepsActions:
+  - {fileID: 11400000, guid: 0499ad7f0e8a38746806594d0c1908d2, type: 2}
+  jumpLandingActions:
+  - {fileID: 11400000, guid: 273245864677f5948b26d3a95895ed01, type: 2}
   drawRaycast: 1

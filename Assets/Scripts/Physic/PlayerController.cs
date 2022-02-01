@@ -220,7 +220,6 @@ public class PlayerController : MonoBehaviour
         if (HasControl && InputManager.Instance.JumpDown)
         {
             JumpWithDataForce();
-            animator.SetTrigger("StartJump");
         }
 
         if (!downCol.isColliding && InputManager.Instance.JumpUp && !endedJumpEarly && Velocity.y > 0)

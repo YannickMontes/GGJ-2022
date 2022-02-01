@@ -1,7 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class Altar : TriggerOnPlayer
 {
+    public Transform playerPos = null;
+    public float timeBeforeGodMode = 2.0f;
+
     public enum ETriggerBehavior
     {
         INPUT,
@@ -16,12 +20,22 @@ public class Altar : TriggerOnPlayer
     {
         if (triggerBehavior == ETriggerBehavior.TRIGGER)
         {
-            player.TriggerAltar();
+            StartCoroutine(TriggerAfterTime(player));
         }
         else if (triggerBehavior == ETriggerBehavior.INPUT)
         {
             isClose = true;
         }
+    }
+
+    private IEnumerator TriggerAfterTime(Player player)
+    {
+        player.playerController.SetHasControl(false);
+        player.playerController.animator.SetBool("IsPraying", true);
+        player.transform.position = playerPos.position;
+        yield return new WaitForSeconds(timeBeforeGodMode);
+        player.playerController.animator.SetBool("IsPraying", false);
+        player.TriggerAltar();
     }
 
     private void OnTriggerExit2D(Collider2D collision)

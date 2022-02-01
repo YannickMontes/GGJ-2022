@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/PlayerControllerData")]
 public class PlayerControllerData : ScriptableObject
@@ -35,7 +36,8 @@ public class PlayerControllerData : ScriptableObject
 
     [Header("Audio")]
     public FMODUnity.EventReference jumpEventRef;
-    public FMODUnity.EventReference footstepEventRef;
+    public List<GameAction> footStepsActions = new List<GameAction>();
+    public List<GameAction> jumpLandingActions = new List<GameAction>();
 
     [Header("Debug")]
     public bool drawRaycast = true;

@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
     public void TriggerAltar()
     {
         GameManager.Instance.ChangeState(GameManager.EGameState.GOD_MODE);
-        playerController.SetHasControl(false);
         playerController.controllerData = iaData;
         iaController.SetActive(true);
     }
@@ -48,8 +47,13 @@ public class Player : MonoBehaviour
         healthController.RefillLife();
     }
 
-    public void PlayFootsteps()
+    public void ExecuteFootstepActions()
     {
-        AudioManager.Instance.StartEvent(playerData.footstepEventRef, transform);
+        playerController.controllerData.footStepsActions?.Execute(this);
+    }
+
+    public void TouchGround()
+    {
+        playerController.controllerData.jumpLandingActions?.Execute(this);
     }
 }
