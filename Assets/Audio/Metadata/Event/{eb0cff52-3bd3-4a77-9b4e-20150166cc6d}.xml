@@ -123,7 +123,7 @@
 	<object class="MixerBusPanner" id="{2bc545c7-ebb7-4b38-9a0f-c48fa99b7350}" />
 	<object class="SingleSound" id="{2d5f0ee1-ea35-4b1e-891f-5c119bc46e79}">
 		<property name="startOffset">
-			<value>8.5</value>
+			<value>18.5</value>
 		</property>
 		<property name="volume">
 			<value>-10.5</value>

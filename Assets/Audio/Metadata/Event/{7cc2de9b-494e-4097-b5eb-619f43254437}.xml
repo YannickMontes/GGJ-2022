@@ -123,10 +123,10 @@
 	<object class="MixerBusPanner" id="{86d681d7-5869-451e-bfa1-40920114ce3a}" />
 	<object class="SingleSound" id="{68080464-e456-4898-8288-0fe4fb7b4caf}">
 		<property name="startOffset">
-			<value>8.5</value>
+			<value>1.5</value>
 		</property>
 		<property name="volume">
-			<value>-16.5</value>
+			<value>-9</value>
 		</property>
 		<property name="pitch">
 			<value>2</value>
@@ -152,7 +152,7 @@
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>17</value>
+			<value>11.5</value>
 		</property>
 	</object>
 	<object class="RandomizerModulator" id="{1fd26c61-81ca-413f-9573-eb758ab5a07f}">
@@ -160,7 +160,7 @@
 			<value>startOffset</value>
 		</property>
 		<property name="amount">
-			<value>16</value>
+			<value>14</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{f09e9060-0f4c-49eb-bede-c9109f9c5193}" />
