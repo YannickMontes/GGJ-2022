@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     private bool coyoteUsable = false;
     private float timeLeftGrounded;
     private float jumpApexValue = 0;
+    private bool wasCollidingGroundLastFrame = false;
 
     private bool CanUseCoyote => coyoteUsable && !downCol.isColliding && timeLeftGrounded + controllerData.coyoteTime > Time.time;
     private bool HasBufferedJump => downCol.isColliding && InputManager.Instance.LastJumpTime + controllerData.jumpBufferTime > Time.time;
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
         }
         lastPosition = transform.position;
 
-        bool wasCollidingGroundLastFrame = downCol.isColliding;
+        wasCollidingGroundLastFrame = downCol.isColliding;
 
         CalcultateRayRange();
         ComputeCollisions();
@@ -182,6 +183,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            StopAllCoroutines();
             float fallSpeed = endedJumpEarly && verticalSpeed > 0 
                 ? currentFallSpeed * controllerData.endEarlyJumpModifier //Fall faster if we release jump early
                 : currentFallSpeed;
@@ -259,12 +261,17 @@ public class PlayerController : MonoBehaviour
     public void ApplyMovement()
     {
         Vector3 moveSpeed = new Vector2(horizontalSpeed, verticalSpeed) * Time.deltaTime;
+        if (!wasCollidingGroundLastFrame && downCol.isColliding)
+        {
+            moveSpeed.y = moveSpeed.y - downCol.collideDistance + 0.001f;
+        }
         Vector3 furthestPoint = transform.position + moveSpeed + controllerData.bounds.center;
 
         Collider2D hit = Physics2D.OverlapBox(furthestPoint, controllerData.bounds.size, 0, controllerData.groundLayer);
         if (hit == null)
         {
             transform.position += moveSpeed;
+            StickToGround();
             return;
         }
 
@@ -278,17 +285,28 @@ public class PlayerController : MonoBehaviour
             if (Physics2D.OverlapBox(posToTry, controllerData.bounds.size, 0, controllerData.groundLayer))
             {
                 transform.position = positionToMoveTo;
-                if (i == 1)
-                {
-                    if (verticalSpeed < 0)
-                        verticalSpeed = 0;
-                    var dir = transform.position - hit.transform.position;
-                    transform.position += dir.normalized * moveSpeed.magnitude;
-                }
+                //if (i == 1)
+                //{
+                //    if (verticalSpeed < 0)
+                //        verticalSpeed = 0;
+                //    var dir = transform.position - hit.transform.position;
+                //    transform.position += dir.normalized * moveSpeed.magnitude;
+                //}
                 return;
             }
             positionToMoveTo = posToTry;
         }
+         StickToGround();
+    }
+
+    private void StickToGround()
+    {
+        //if(!wasCollidingGroundLastFrame && downCol.isColliding)
+        //{
+        //    Vector3 newPos = transform.position;
+        //    newPos.y -= downCol.collideDistance;
+        //    transform.position = newPos;
+        //}
     }
 
     private void OnDrawGizmos()
