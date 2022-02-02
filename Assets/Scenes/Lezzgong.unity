@@ -16913,6 +16913,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2412574776423588937, guid: 8c54a44d0cc94b743a39aac080a290a6, type: 3}
+      propertyPath: onLevelStart.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2412574776423588937, guid: 8c54a44d0cc94b743a39aac080a290a6, type: 3}
+      propertyPath: onLevelStart.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d42bff90c5faf344b6cb6984918baa6, type: 2}
     - target: {fileID: 3429817149288446713, guid: 8c54a44d0cc94b743a39aac080a290a6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
