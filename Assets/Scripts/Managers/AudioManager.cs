@@ -1,9 +1,17 @@
 using FMOD.Studio;
 using FMODUnity;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
+    public List<GameAction> onLevelStart = new List<GameAction>();
+
+    private void Start()
+    {
+        onLevelStart?.Execute(this);
+    }
+
     public EventInstance? StartEvent(EventReference evt, Transform transform = null)
     {
         if (evt.IsNull)
