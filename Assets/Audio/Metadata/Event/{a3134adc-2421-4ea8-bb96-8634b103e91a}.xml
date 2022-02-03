@@ -34,6 +34,9 @@
 		<relationship name="parameters">
 			<destination>{1fb5db8e-0ed2-4282-b3dd-9e09b77bf3c3}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{a8fd6783-1780-4dd8-ae52-90fe692b3b3e}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{61d2d619-17b2-4473-ab82-a303ea8c53b7}">
 		<relationship name="masterBus">
@@ -115,8 +118,8 @@
 	<object class="MixerBusEffectChain" id="{219d657c-1839-465e-9564-25e0eb66c1d2}">
 		<relationship name="effects">
 			<destination>{9f015446-1351-4423-8ce7-9d4d7b562b1a}</destination>
-			<destination>{a2339970-c66a-4811-9961-14a73fda0387}</destination>
 			<destination>{29b81426-98a4-4052-9e49-dd93c065b8d6}</destination>
+			<destination>{95d40010-8867-405a-8333-846bb517287b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{13f70cfd-fa09-4dbd-9949-ee91f960116b}" />
@@ -133,23 +136,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{2f7d25ed-a11e-4b55-b43f-ca81410665f7}" />
 	<object class="MixerBusFader" id="{9f015446-1351-4423-8ce7-9d4d7b562b1a}" />
-	<object class="SFXReverbEffect" id="{a2339970-c66a-4811-9961-14a73fda0387}">
-		<property name="decayTime">
-			<value>2600</value>
-		</property>
-		<property name="lowShelfFrequency">
-			<value>400</value>
-		</property>
-		<property name="lowShelfGain">
-			<value>-15</value>
-		</property>
-		<property name="wetLevel">
-			<value>-10.5</value>
-		</property>
-		<property name="dryLevel">
-			<value>-4.5</value>
-		</property>
-	</object>
 	<object class="SpatialiserEffect" id="{29b81426-98a4-4052-9e49-dd93c065b8d6}" />
+	<object class="MixerSend" id="{95d40010-8867-405a-8333-846bb517287b}">
+		<property name="level">
+			<value>0</value>
+		</property>
+		<property name="inputFormat">
+			<value>2</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{858170a2-8d36-4223-bd8b-ad203c5a55c0}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{295d75e8-0ce1-48e4-b221-d5c2160de7fe}" />
 </objects>

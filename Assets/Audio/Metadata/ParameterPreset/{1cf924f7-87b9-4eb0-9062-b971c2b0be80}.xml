@@ -20,7 +20,7 @@
 		</property>
 		<property name="enumerationLabels">
 			<value>platformer</value>
-			<value>end</value>
+			<value>altar</value>
 		</property>
 		<property name="isGlobal">
 			<value>true</value>

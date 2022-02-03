@@ -16921,6 +16921,10 @@ PrefabInstance:
       propertyPath: onLevelStart.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 4d42bff90c5faf344b6cb6984918baa6, type: 2}
+    - target: {fileID: 2412574776423588937, guid: 8c54a44d0cc94b743a39aac080a290a6, type: 3}
+      propertyPath: onLevelStart.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: a2919dc03dc29ac4693e8a6ac86ce560, type: 2}
     - target: {fileID: 3429817149288446713, guid: 8c54a44d0cc94b743a39aac080a290a6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -16955,6 +16959,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235396622634592397, guid: 8c54a44d0cc94b743a39aac080a290a6, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279347595503326224, guid: 8c54a44d0cc94b743a39aac080a290a6, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5734813233423850788, guid: 8c54a44d0cc94b743a39aac080a290a6, type: 3}
