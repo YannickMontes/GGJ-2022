@@ -47,3 +47,4 @@ MonoBehaviour:
   breakableWallLayer:
     serializedVersion: 2
     m_Bits: 256
+  allBreakablesWallData: {fileID: 11400000, guid: ef6808d29df01fe44a307a5c27a9adb9, type: 2}

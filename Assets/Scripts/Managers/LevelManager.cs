@@ -10,6 +10,8 @@ public class LevelManager : Singleton<LevelManager>
     public Tilemap BreakableTilemap { get; private set; }
 
     public LayerMask breakableWallLayer;
+    public AllBreakableWallsData allBreakablesWallData = null;
+
 
     public Action OnReloadLevelAction = null;
 

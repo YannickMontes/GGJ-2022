@@ -16,16 +16,20 @@ public class BreakableWallContainer
 
     public void Respawn()
     {
+        CurrentLife = data.maxLife;
         foreach(BreakableWall breakableWall in breakableWalls)
         {
             breakableWall.Respawn();
         }
-        CurrentLife = data.maxLife;
     }
 
     public void ApplyDamages(int damages)
     {
         CurrentLife = Mathf.Clamp(CurrentLife - damages, 0, data.maxLife);
+        foreach(BreakableWall breakableWall in breakableWalls)
+        {
+            breakableWall.OnDamaged();
+        }
         CheckDeath();
     }
 
