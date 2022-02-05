@@ -1,12 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
     public GameObject plateformerUI = null;
     public GameObject godModeUI = null;
     public DialogManagerUI dialogManagerUI = null;
+    public Image cursorImage = null;
+
+    public void ChangeCursorSprite(Sprite sprite)
+    {
+        cursorImage.sprite = sprite;
+        cursorImage.enabled = sprite != null;
+    }
 
     public void LaunchDialog(DialogueInfosData dialog)
     {
@@ -28,11 +34,21 @@ public class UIManager : Singleton<UIManager>
         {
             plateformerUI.SetActive(false);
             godModeUI.SetActive(true);
+            cursorImage.enabled = cursorImage.sprite != null;
         }
         else if(newState == GameManager.EGameState.PLATEFORMER)
         {
             plateformerUI.SetActive(true);
             godModeUI.SetActive(false);
+            cursorImage.enabled = false;
+        }
+    }
+
+    private void Update()
+    {
+        if(GameManager.Instance.CurrentState == GameManager.EGameState.GOD_MODE)
+        {
+            cursorImage.transform.position = Input.mousePosition;
         }
     }
 

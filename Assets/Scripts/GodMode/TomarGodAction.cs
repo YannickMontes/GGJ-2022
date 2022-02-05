@@ -1,5 +1,11 @@
 ﻿public class TomarGodAction : GodActionWithData<TomarGodActionData>
 {
+    public override void SetActive(bool active)
+    {
+        base.SetActive(active);
+        UIManager.Instance?.ChangeCursorSprite(active ? Data.cursorSprite : null);
+    }
+
     public override bool CanExecute()
     {
         if(base.CanExecute())
