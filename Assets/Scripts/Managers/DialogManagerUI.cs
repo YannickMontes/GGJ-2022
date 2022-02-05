@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using LINQtoCSV;
 using System;
-using TMPro;
 using UnityEngine.UI;
 public class DialogManagerUI : Singleton<DialogManagerUI>
 {
@@ -11,15 +9,16 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
         public List<string> traductions = new List<string>();
     }
 
-    public GameObject godDialogueUI;
-    public GameObject humanDialogueUI;
+    [Serializable]
+    public class DialogTextBox
+    {
+        public DialogueInfosData.DialogLine.EDialogPositionType positionType = DialogueInfosData.DialogLine.EDialogPositionType.BOTTOM_LEFT;
+        public DialogUI dialogUI = null;
+    }
 
-    public Image godImage = null;
-    public ProgressiveTextUI godDialog = null;
+    public List<DialogTextBox> dialogTextBoxes = new List<DialogTextBox>();
 
-    public Image humanImage = null;
-    public ProgressiveTextUI humanDialog = null;
-
+   
     public TextAsset csvText = null;
 
     public Action<AudioClip> OnchangeDialogue = null;
@@ -30,12 +29,30 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
 
     private DialogueInfosData currentDialog = null;
     private int currentLineIndex = 0;
-    private ProgressiveTextUI currentProgressiveUI = null;
+    private DialogUI currentDialogUI = null;
+
+    public string GetTranslation(string key)
+    {
+        Traduction trad = null;
+        if (locKeysTrad.TryGetValue(key, out trad))
+        {
+            return trad.traductions[0];
+        }
+        Debug.LogError($"No trad for this key: {key}");
+        return null;
+    }
 
     private void OnEnable()
     {
-        humanDialogueUI.SetActive(false);
-        godDialogueUI.SetActive(false);
+        DisableDialogUI();
+    }
+
+    private void DisableDialogUI()
+    {
+        foreach (DialogTextBox dialog in dialogTextBoxes)
+        {
+            dialog.dialogUI.gameObject.SetActive(false);
+        }
     }
 
     protected override void Awake()
@@ -75,16 +92,8 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
         {
             currentLineIndex++;
             DialogueInfosData.DialogLine dialogLine = currentDialog.dialogLines[currentLineIndex];
-            Traduction trad = null;
-            if(locKeysTrad.TryGetValue(dialogLine.key, out trad))
-            {
-                DisplayDialogue(trad.traductions[0], dialogLine.eventRef, dialogLine.speaker.isGod, dialogLine.speaker.characterSprite);
-                OnDialogNewLine?.Invoke();
-            }
-            else
-            {
-                Debug.LogError($"No trad for this key {dialogLine.key} !");
-            }
+            DisplayDialogue(dialogLine, dialogLine.eventRef);
+            OnDialogNewLine?.Invoke();
         }
         else
         {
@@ -97,9 +106,7 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
         currentDialog = null;
         currentLineIndex = -1;
         OnDialogEnd?.Invoke();
-
-        humanDialogueUI.SetActive(false);
-        godDialogueUI.SetActive(false);
+        DisableDialogUI();
     }
 
     public void Update()
@@ -108,9 +115,9 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
         {
             if(InputManager.Instance.GetInputValue(InputManager.EInput.Interact, InputManager.EInputType.Down))
             {
-                if(currentProgressiveUI.IsWriting)
+                if(currentDialogUI.progressiveTextUI.IsWriting)
                 {
-                    currentProgressiveUI.Skip();
+                    currentDialogUI.progressiveTextUI.Skip();
                 }
                 else
                 {
@@ -120,22 +127,20 @@ public class DialogManagerUI : Singleton<DialogManagerUI>
         }
     }
 
-    void DisplayDialogue(string lines, FMODUnity.EventReference eventRef, bool isGod, Sprite dialogueImage)
+    void DisplayDialogue(DialogueInfosData.DialogLine line, FMODUnity.EventReference eventRef)
     {
-        if(isGod){
-            humanDialogueUI.SetActive(false);
-            godDialogueUI.SetActive(true);
-            godImage.sprite = dialogueImage;
-            currentProgressiveUI = godDialog;
-            godDialog.DisplayText(lines);
-        } else
+        currentDialogUI?.gameObject.SetActive(false);
+        currentDialogUI = null;
+        foreach (DialogTextBox textBox in dialogTextBoxes)
         {
-            humanDialogueUI.SetActive(true);
-            godDialogueUI.SetActive(false);
-            humanImage.sprite = dialogueImage;
-            currentProgressiveUI = humanDialog;
-            humanDialog.DisplayText(lines);
+            if(textBox.positionType == line.dialogPositionType)
+            {
+                currentDialogUI = textBox.dialogUI;
+                break;
+            }
         }
+        currentDialogUI.gameObject.SetActive(true);
+        currentDialogUI.SetDialogLine(line);
         AudioManager.Instance.StartEvent(eventRef);
     }
 }

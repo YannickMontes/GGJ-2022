@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: YanaSpeakerData
   m_EditorClassIdentifier: 
   characterNameKey: YANA_SPEAKER_NAME
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 6f7a1af2622f3ffff9524c7c4e973c2d, type: 3}
   isGod: 1

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: NisoSpeakerName
   m_EditorClassIdentifier: 
   characterNameKey: NISO_SPEAKER_NAME
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 88772deb6f2659b7087c536951ef2e20, type: 3}
   isGod: 0

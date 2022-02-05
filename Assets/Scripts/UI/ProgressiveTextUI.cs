@@ -20,8 +20,8 @@ public class ProgressiveTextUI : MonoBehaviour
     {
         StopAllCoroutines();
         isSkiping = false;
-        textToDisplay = text;
-        textBox.text = "";
+        textToDisplay = text.Substring(1);
+        textBox.text = text[0].ToString();
         currentCharIndex = 0;
         lastTimeDisplayedChar = Time.time;
     }

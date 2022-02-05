@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HasaSpeakerName
   m_EditorClassIdentifier: 
   characterNameKey: HASA_SPEAKER_NAME
-  characterSprite: {fileID: 0}
+  characterSprite: {fileID: 21300000, guid: 380dd91e420a388d3aff4ba4bf0b4c1b, type: 3}
   isGod: 1
