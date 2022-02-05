@@ -25,13 +25,13 @@ MonoBehaviour:
   breakableLayer:
     serializedVersion: 2
     m_Bits: 0
-  maxHorizontalSpeed: 17
+  maxHorizontalSpeed: 12
   acceleration: 110
   deceleration: 100
   fallClamp: -50
   minFallSpeed: 100
   maxFallSpeed: 140
-  jumpSpeed: 35
+  jumpSpeed: 30
   jumpApexThreshold: 5
   coyoteTime: 0.1
   jumpBufferTime: 0.1
