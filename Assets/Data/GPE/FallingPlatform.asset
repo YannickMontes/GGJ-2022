@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a439c8d43ff264092cfb6d82e9c07b, type: 3}
   m_Name: FallingPlatform
   m_EditorClassIdentifier: 
-  timeBeforeFall: 1
+  timeBeforeFall: 0.5
   willRespawn: 1
   respawnTime: 5
   fallDistance: 2
