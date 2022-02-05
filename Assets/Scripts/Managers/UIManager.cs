@@ -23,6 +23,7 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
+        Cursor.visible = false;
         GameManager.Instance.OnChangeStateAction += OnGameManagerStateChanged;
         OnGameManagerStateChanged(GameManager.Instance.CurrentState);
         dialogManagerUI.gameObject.SetActive(false);
