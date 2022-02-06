@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
         healthController.OnDeathAction += LevelManager.Instance.ReloadLevel;
     }
 
+    private void Update()
+    {
+        healthController.Update(Time.deltaTime);
+    }
+
     private void OnDestroy()
     {
         LevelManager.Instance.OnReloadLevelAction -= RespawnLastCheckpoint;

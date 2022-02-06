@@ -5,4 +5,5 @@ public class PlacePlatformActionData : GodActionData
 {
     public GameObject previewObject = null;
     public GameObject platformToPlace = null;
+    public FMODUnity.EventReference placePlatformEvent;
 }

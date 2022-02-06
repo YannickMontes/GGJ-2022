@@ -30,6 +30,7 @@ public class PlacePlatformAction : GodActionWithData<PlacePlatformActionData>
 
     protected override void Execute()
     {
+        AudioManager.Instance.StartEvent(Data.placePlatformEvent);
         LevelManager.Instance.SpawnDynamicObject(Data.platformToPlace, Utils.GetCellCenterFromMouse(LevelManager.Instance.GroundTilemap));
     }
 

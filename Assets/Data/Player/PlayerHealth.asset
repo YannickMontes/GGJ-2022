@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04a81b17bcebd974297d292000febc85, type: 3}
   m_Name: PlayerHealth
   m_EditorClassIdentifier: 
-  maxLife: 2
+  maxLife: 1
   invincibilityTime: 1.5

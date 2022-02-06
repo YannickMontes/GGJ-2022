@@ -18,6 +18,31 @@ MonoBehaviour:
   - {x: 2, y: 3}
   - {x: 1, y: 2}
   - {x: 0, y: 1}
+  onClickEvents:
+  - Guid:
+      Data1: 703353014
+      Data2: 1307161118
+      Data3: -1149544546
+      Data4: -785115540
+    Path: event:/player/hammer_hit_4
+  - Guid:
+      Data1: -594319389
+      Data2: 1241270720
+      Data3: -1281465719
+      Data4: 1832494557
+    Path: event:/player/hammer_hit_3
+  - Guid:
+      Data1: -176519292
+      Data2: 1239995396
+      Data3: -820840005
+      Data4: 1745129500
+    Path: event:/player/hammer_hit_2
+  - Guid:
+      Data1: 2050901658
+      Data2: 1246750407
+      Data3: 1560785800
+      Data4: 2044191540
+    Path: event:/player/hammer_hit_1
   allWallDirections:
   - sprites:
     - {fileID: 2025751709, guid: 6ec96092b4d9053b487cd123d7843a25, type: 3}

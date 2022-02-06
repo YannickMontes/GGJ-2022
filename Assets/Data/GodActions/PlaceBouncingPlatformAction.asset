@@ -15,3 +15,10 @@ MonoBehaviour:
   cooldown: 1
   previewObject: {fileID: 5423885883342931665, guid: 699dfc6f806488947b3b6f8ab6f5eb26, type: 3}
   platformToPlace: {fileID: 1766506215062379544, guid: b4168f1bb013d4744a31ed6b4d0ead36, type: 3}
+  placePlatformEvent:
+    Guid:
+      Data1: -1911901413
+      Data2: 1097760264
+      Data3: -874005077
+      Data4: -820557543
+    Path: event:/player/platform_spawn

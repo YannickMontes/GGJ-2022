@@ -17,6 +17,8 @@
     protected override void Execute()
     {
         BreakableWall breakableWall = Utils.GetBreakableWallFromMousePos();
+        FMODUnity.EventReference evtToLaunch = LevelManager.Instance.allBreakablesWallData.GetEventToLaunch(breakableWall.Container.CurrentLife);
+        AudioManager.Instance.StartEvent(evtToLaunch, breakableWall.transform);
         breakableWall.Container.ApplyDamages(Data.damageByAction);
     }
 }

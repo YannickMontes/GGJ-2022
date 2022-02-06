@@ -44,6 +44,13 @@ public class AllBreakableWallsData : ScriptableObject
         return maxIntersectWall.wallSprite;
     }
 
+    public FMODUnity.EventReference GetEventToLaunch(int breakableLife)
+    {
+        int index = Mathf.Clamp(breakableLife - 1, 0, onClickEvents.Count - 1);
+        return onClickEvents[index];
+    }
+
     public List<Vector2> thresholds = new List<Vector2>();
+    public List<FMODUnity.EventReference> onClickEvents = new List<FMODUnity.EventReference>();
     public List<BreakableWallDirection> allWallDirections = new List<BreakableWallDirection>();
 }
