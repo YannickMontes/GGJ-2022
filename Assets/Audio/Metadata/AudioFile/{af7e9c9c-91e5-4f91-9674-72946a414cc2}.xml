@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{af7e9c9c-91e5-4f91-9674-72946a414cc2}">
 		<property name="assetPath">
-			<value>Dialogs/DIAL_A01_S01_07_HASA.mp3</value>
+			<value>Dialogs/DIAL_A01_S01_40_HASA.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

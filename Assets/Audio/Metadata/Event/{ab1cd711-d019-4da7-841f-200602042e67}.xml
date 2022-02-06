@@ -127,7 +127,7 @@
 			<value>6.5</value>
 		</property>
 		<property name="volume">
-			<value>-10</value>
+			<value>-8</value>
 		</property>
 		<property name="pitch">
 			<value>-0.600000024</value>
@@ -149,7 +149,7 @@
 	<object class="MixerBusFader" id="{a486bce2-ff5d-4881-bbdb-9373739c6c13}" />
 	<object class="MixerSend" id="{9c2496e0-9dc4-4e88-b46d-2ce3a846d04c}">
 		<property name="level">
-			<value>-12</value>
+			<value>-9.5</value>
 		</property>
 		<property name="inputFormat">
 			<value>1</value>

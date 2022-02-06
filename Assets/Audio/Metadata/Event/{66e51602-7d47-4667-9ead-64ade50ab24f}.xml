@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{66e51602-7d47-4667-9ead-64ade50ab24f}">
 		<property name="name">
-			<value>DIAL_A01_S01_12_YANA</value>
+			<value>DIAL_A01_S01_80_YANA</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
@@ -80,6 +80,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{20238cbf-6697-4a28-816e-46cec2c14cbd}">
+		<property name="volume">
+			<value>-4</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{4ded99a1-02e8-41a9-b580-24f260990725}</destination>
 		</relationship>

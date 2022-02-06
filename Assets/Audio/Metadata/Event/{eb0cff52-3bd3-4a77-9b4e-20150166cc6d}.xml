@@ -127,7 +127,7 @@
 			<value>24.5</value>
 		</property>
 		<property name="volume">
-			<value>-12</value>
+			<value>-11</value>
 		</property>
 		<relationship name="modulators">
 			<destination>{9e610e20-c79b-41dc-b26a-c059980eaa63}</destination>
@@ -147,7 +147,7 @@
 	<object class="MixerBusFader" id="{0cfa8d98-7ff4-478e-ba56-49d17b29be16}" />
 	<object class="MixerSend" id="{3aa13a64-5526-460c-826d-973cde55565c}">
 		<property name="level">
-			<value>-12</value>
+			<value>-10</value>
 		</property>
 		<property name="inputFormat">
 			<value>1</value>

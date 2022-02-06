@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2668bba8-796e-4b91-b1dc-eb3d6d1bb5ec}">
+		<property name="assetPath">
+			<value>Dialogs/text/pencil_4.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0710204081632653</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{63dfca91-bb45-40a6-80d2-d53f46e67948}</destination>
+		</relationship>
+	</object>
+</objects>
