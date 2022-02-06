@@ -118,6 +118,7 @@
 	<object class="MixerBusEffectChain" id="{145fea9e-0364-4f6a-bdc4-55780bed0d8e}">
 		<relationship name="effects">
 			<destination>{27b36a75-2741-4eca-b6cf-770823381e64}</destination>
+			<destination>{da13c4fb-a03a-48ad-9768-3d5c79aac642}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{86d681d7-5869-451e-bfa1-40920114ce3a}" />
@@ -147,6 +148,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{959d2e53-7183-425f-84b1-e950ac36c90c}" />
 	<object class="MixerBusFader" id="{27b36a75-2741-4eca-b6cf-770823381e64}" />
+	<object class="MixerSend" id="{da13c4fb-a03a-48ad-9768-3d5c79aac642}">
+		<property name="level">
+			<value>-12</value>
+		</property>
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{88a0fb03-1489-43c0-805f-6d8d62c8d6b4}</destination>
+		</relationship>
+	</object>
 	<object class="RandomizerModulator" id="{49986a0b-8755-4aee-a460-d228f9cb7c23}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
