@@ -156,7 +156,7 @@ public class PlayerController : MonoBehaviour
     private void HandleHorizontalMovement()
     {
         float horizontalInput = HasControl ? InputManager.Instance.XInput : XIAInput;
-       if(horizontalInput != 0)
+        if(horizontalInput != 0)
         {
             //Accelerate to max Speed
             horizontalSpeed += horizontalInput * Time.deltaTime * controllerData.acceleration;

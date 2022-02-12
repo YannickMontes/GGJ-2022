@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0.4, y: 0.4, z: 0.3}
-  nbRayToCast: 5
+    m_Extent: {x: 0.4, y: 1, z: 0.3}
+  nbRayToCast: 10
   fromBoundsOffset: 0.1
-  rayRange: 0.3
-  collidersIterations: 10
+  rayRange: 0.2
+  collidersIterations: 20
   groundLayer:
     serializedVersion: 2
     m_Bits: 384
@@ -36,6 +36,14 @@ MonoBehaviour:
   coyoteTime: 0.1
   jumpBufferTime: 0.1
   endEarlyJumpModifier: 3
-  jumpAudio: {fileID: 0}
   healthData: {fileID: 11400000, guid: b5afcf51b7b0c8940b7feabc6c441bb8, type: 2}
+  jumpEventRef:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  footStepsActions: []
+  jumpLandingActions: []
   drawRaycast: 1
