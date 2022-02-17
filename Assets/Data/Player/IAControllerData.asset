@@ -16,7 +16,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.4, y: 1, z: 0.3}
   nbRayToCast: 10
-  fromBoundsOffset: 0.1
+  fromBoundsOffset: 0
   rayRange: 0.2
   collidersIterations: 20
   groundLayer:
@@ -39,11 +39,13 @@ MonoBehaviour:
   healthData: {fileID: 11400000, guid: b5afcf51b7b0c8940b7feabc6c441bb8, type: 2}
   jumpEventRef:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  footStepsActions: []
-  jumpLandingActions: []
+      Data1: 2093145755
+      Data2: 1083656526
+      Data3: -1620972619
+      Data4: 927212867
+    Path: event:/player/jump
+  footStepsActions:
+  - {fileID: 11400000, guid: 0499ad7f0e8a38746806594d0c1908d2, type: 2}
+  jumpLandingActions:
+  - {fileID: 11400000, guid: 273245864677f5948b26d3a95895ed01, type: 2}
   drawRaycast: 1

@@ -16,7 +16,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.4, y: 1, z: 0.3}
   nbRayToCast: 10
-  fromBoundsOffset: 0.1
+  fromBoundsOffset: 0
   rayRange: 0.2
   collidersIterations: 20
   groundLayer:
